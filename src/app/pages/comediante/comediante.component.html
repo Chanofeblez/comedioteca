@@ -1,0 +1,45 @@
+<div class="container row mt-5">
+    <div class="col-md-6">
+
+        <!--Imagen-->
+        <img [src]='comico.image' [alt]="comico.name" class="img-thumbnail">
+
+    </div>
+
+    <div class="col-md-6">
+
+        <!--Nombre-->
+        <h3 text-white> {{ comico.name }}</h3>
+
+        <!--Descripcion-->
+        <div class="row mt-4">
+            <div class="col text-white">
+                {{ comico.description }}
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col">
+                <button class="btn btn-outline-info" (click)="onRegresar()">
+                  Regresar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 mt-3 ">
+        <div class="card-columns row ">
+            <div class="card col-md-4 m-2" *ngFor="let video of videos">
+                <img [src]="video.snippet.thumbnails.high.url" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title text-black">{{ video.snippet.title }}</h5>
+
+                    <button class="btn btn-outline-primary btn-block" (click)="mostrarVideo( video )">
+                      Ver Video
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
